@@ -1,0 +1,193 @@
+https://code.visualstudio.com/ > Install
+https://nodejs.org/en > Install
+https://git-scm.com/downloads > Install
+https://github.com/ > Create Account
+https://github.com/Aakashdeveloper > Follow
+
+
+
+JavaScript
+Ifelse,Function,object,JSON,Variables
+
+NPM
+package.json
+Basic NodeJS(in built)(Os,file,http)
+NodeJS(full Stack App) (Node-EJs-Mongo-Express)
+Third Party Api (Weather Api)
+Node-Es6(.babel)
+Redis v3  > 6379
+Redis v4
+Redisv4 With Mongov5
+ImageUpload
+ImageUpload(formidable)
+Multer
+Upload image in db
+S3 Imageupload
+Redis Cloud
+MongoDb Basic >27017  (local/cloud)
+Zomato App backend
+Api with NodeJS(Rest)>1
+Swagger
+Testing
+CodeCovarge
+DashBoard(Crud)
+
+Github
+--Deployment of app---
+render
+Pm2
+Nginx
+
+Email With Node(nodemailer)
+Login/Logout(JWT)
+Oauth(with github) (https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)
+Oauth(with google)
+NodeJs with postgres
+TelegramChat
+Chatapp
+GraphQl API
+FIREBASE
+Paytm-Payment
+///////////////////////////////////////////////////////////////////
+Jenkins
+Docker
+AWS lambda micorservice
+--------NOT---------
+React/Angular
+Html/css/jquery
+
+
+Node JS @ 8:00 PM (IST) By Mr.Aakash
+Day-1 https://youtu.be/YLSKLQgaIIA
+Day-2 https://youtu.be/M9mMKyPXv9k
+Day-3 https://youtu.be/6Jl1TvbCZL0
+Day-4 https://youtu.be/MNYhpcyMthU
+Day-5 https://youtu.be/DyZdTkN9G6c
+Day-6 https://youtu.be/gvtaldMBYXc
+
+
+
+NodeJs
+Single Threaded Async Non-Blocking
+
+open source
+
+npm > node package manager
+
+
+JSON
+> Javascript object notation
+Way to represent the data
+
+key value
+[
+    {
+        "name":"Ankit",
+        "class":"Node"
+    },
+    {
+        "name":"Neha",
+        "class":"React"
+    }
+]
+
+package.json
+> this is entry point to the app
+> meta data (like version, description)
+> scripts (start, test,build)
+> packages
+
+//steps to generate package.json
+> Go inside the folder using cmd/terminal
+> type npm init
+> Answer all questions
+> type yes
+
+//steps to install packages
+> Go inside the folder using cmd/terminal
+> npm install packagename
+
+
+local dependency
+> only related to the folder
+> can only be used in same folder
+> added in package.json
+> open cmd and go inside the folder where you want to install
+> npm i package
+
+dev dependency
+> all thing same like local dependency
+> only need at the time of development
+> open cmd and go inside the folder where you want to install
+> npm i packagename --save-dev
+
+global dependency
+> install in laptop drive instend of application folder
+> independent of application
+> only used generating , run app
+> we need admin permission to install
+> only accesible befor app start
+
+# window
+> open cmd as admin
+> npm i -g packagename
+
+# mac/linux
+> open terminal
+> sudo npm i -g packagename
+
+# nodemon
+* Only one time in laptop
+> open cmd as admin
+> npm i -g nodemon
+
+# Setup mongodb
+
+
+
+Params
+> What we pass after /
+> We need to declare in route
+> if declare then complusory to pass
+> req.params.id
+
+QueryParams
+> What we pass after ?
+> No need to declare
+> No need to pass
+> req.query.city
+
+
+https://redis.io/download/
+
+//Redis
+KEYS *
+set key value
+get key
+del key
+FLUSHALL
+
+set keyname value ex time
+
+
+C > Create  POST
+R > Read    GET
+U > Update  PUT
+D > Delete  Delete
+
+
+npm i -g pm2
+
+pm2 start filename
+pm2 stop
+pm2 status
+
+pm2 start filename -i processNumber
+
+
+npm i -g json-server
+
+json-server --watch db.json --port 9002
+
+docker build . -t imagename
+docker run -p 8000:3000 imagename

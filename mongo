@@ -1,0 +1,199 @@
+https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/
+
+> in C drive make one folder by the name of data
+C/data
+> inside data make folder by name of db
+C/data/db
+
+> 27017 Default port
+
+# How to start mongodb server
+> open cmd and go inside bin folder
+C:/programFile/mongodb/server/7.0.0/bin
+* mongod
+(this will start the mongodb server)
+* Do not close cmd
+
+# How to start client
+> open the new cmd
+C:/programFile/mongodb/server/7.0.0/bin
+* mongosh
+(to test any kind of query)
+
+
+# mac
+> open terminal
+mkdir data/db
+mongod --config /usr/local/etc/mongod.conf --fork
+
+
+RollNo | Hindi | English
+  1    |  80   |
+  2    |       |  90
+  3    |  89   |
+
+[
+    {
+        "rollNo":1,
+        "Hindi":80
+    },
+    {
+        "rollNo":2,
+        "English":90
+    },
+    {
+        "rollNo":3,
+        "Hindi":89
+    }
+]
+
+SQL        Mongo
+Database   Database
+Table      Collection
+Row        Document
+Select     Find
+Insert     Insert
+Delete     Remove
+Update     Update
+
+# To See all database
+> show dbs
+
+# To go inside database
+> use database name
+
+# To see collections in database
+> show collections
+
+# To see all data in collection
+db.collectionName.find()
+
+# Step to create database
+> use dbname
+
+# insert document
+db.users.insert({"name":"Amit"})
+
+db.users.insert({"name":"Nikita","city":"Paris"})
+
+# find on basis of conditions
+db.products.find({Color: "Grey",Brand: 'Lee'})
+
+
+////mongoCloud
+SignUp> https://cloud.mongodb.com/
+Create Cluster
+
+Database Access
+    > Add New Database User
+        > Add UserName
+        > AutoGenerate Password
+            > Built-in Role
+            > Atlas Admin
+                > Add User
+
+Network Access
+    > Add IP Address
+        > 0.0.0.0/0
+        > Any Comment
+
+
+mongodb+srv://<username>:<password>@cluster0.f8vmc.mongodb.net/?retryWrites=true&w=majority
+
+mongodb+srv://default:JBh32h3h@cluster0.f8vmc.mongodb.net/?retryWrites=true&w=majority
+
+//condition
+
+db.restaurants.find({condition},{projection})
+
+
+db.restaurants.find({state_id:2},{restaurant_name:1,address:1,cost:1})
+
+
+db.restaurants.find({},{restaurant_name:1,address:1,cost:1})
+
+db.restaurants.find({},{restaurant_name:1,address:1,cost:1,_id:0})
+
+
+db.restaurants.find({},{restaurant_name:1,address:1,cost:1}).sort({cost:1})
+db.restaurants.find({},{restaurant_name:1,address:1,cost:1}).sort({cost:-1})
+
+
+db.restaurants.find({},{restaurant_name:1,address:1,cost:1}).sort({cost:1}).skip(9).limit(3)
+
+db.restaurants.find({rating_text:"Excellent"})
+
+db.restaurants.find({"rating_text":"Excellent"})
+
+db.restaurants.find({"rating_text":"Excellent"})
+db.restaurants.find({"mealTypes.mealtype_id":1})
+
+db.restaurants.find({
+    $and:[
+        {"mealTypes.mealtype_id":1},
+        {"cuisines.cuisine_id":1}
+    ]
+},{restaurant_name:1,mealTypes:1,cuisines:1})
+
+
+db.restaurants.find({
+    $or:[
+        {"mealTypes.mealtype_id":1},
+        {"cuisines.cuisine_id":1}
+    ]
+},{restaurant_name:1,mealTypes:1,cuisines:1})
+
+
+db.restaurants.find({"mealTypes.mealtype_id":{$in:[1,2,4]}},{restaurant_name:1,mealTypes:1,cuisines:1})
+
+
+db.restaurants.find({cost:{$gt:900}},{restaurant_name:1,cost:1})
+db.restaurants.find({cost:{$lt:900}},{restaurant_name:1,cost:1})
+
+db.restaurants.find({cost:{$gt:500,$lt:1000}},{restaurant_name:1,cost:1})
+
+////update
+db.users.updateOne({condition},{$set:value})
+
+db.users.updateOne(
+    {
+        name:"Nikita"
+    },
+    {
+        $set:{
+            "phone":77687787,
+            "role":"Admin"
+        }
+    }
+)
+
+db.users.updateOne(
+    {
+        name:"Nikita"
+    },
+    {
+        $set:{
+            "role":"User"
+        }
+    }
+)
+
+db.users.updateOne(
+    {
+        name:"Nikita"
+    },
+    {
+        $unset:{
+            "phone":1
+        }
+    }
+)
+
+//delete
+//remove all data
+db.users.remove({})
+
+//remove particular data
+db.users.remove({condition})
+
+db.users.remove({"name":"Nikita"})
